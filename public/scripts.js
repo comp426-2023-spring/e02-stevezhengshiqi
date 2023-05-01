@@ -7,7 +7,7 @@ import { rps, rpsls } from './rpsls.js';
 let usrMode = null;
 let usrInput = null;
 
-document.querySelector(".play").addEventListener("click", () => {
+document.querySelector(".play-button").addEventListener("click", () => {
     const rpsChecked = document.querySelector("#rps").checked;
     const rpslsChecked = document.querySelector("#rpsls").checked;
     const opponentChecked = document.querySelector("#opponent").checked;
@@ -19,8 +19,11 @@ document.querySelector(".play").addEventListener("click", () => {
     }
 
     if (opponentChecked) {
-        document.querySelector(".inputs").style.display = "block";
+        document.querySelector(".usr-inputs").style.display = "block";
     } else {
-        
+        usrInput = null;
+        play();
     }
-})
+});
+
+document.querySelectorAll
