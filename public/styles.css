@@ -1,8 +1,24 @@
-body {
+.buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
-h1 {
+.play,
+.startOver {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #c5dbef;
+    color: #000000;
+    margin: 10px;
+    transition: 0.3;
 }
 
-p {
+.play:hover,
+.startOver:hover {
+    background-color: #62c6f2; /* carolina blue */
+}
+
+.play:focus,
+.startOver:focus {
+    outline: none;
 }

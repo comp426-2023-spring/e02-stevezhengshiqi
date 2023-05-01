@@ -2,11 +2,43 @@
     <head>
         <title>Rock</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
+        <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="scripts.js" defer></script>
     </head>
     <body>
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
 
+        <div class=""container">
+            <label>
+                <input type="radio" name="mode" value="rps" checked>Play Rock, Paper, Scissors?
+            </label>
+            <label>
+                <input type="radio" name="mode" value="rpsls" checked>Play Rock, Paper, Scissors, Lizard, Spock?
+            </label>
+
+
+            <h1>COMP 426: Rock Paper Scissors Lizard Spock</h1>
+            <div class="modes">
+                <button class="option" onclick="chooseMode('rps')">Play Rock, Paper, Scissors?</button>
+                <button class="option" onclick="chooseMode('rpsls')">Play Rock, Paper, Scissors, Lizard, Spock?</button>
+                <button class="option" onclick="chooseMode('opponent')">Play against an opponent?</button>
+            </div>
+            <div class="inputs" style="display: none;">
+                <button class="option" onclick="selectOpt('rock')">Rock</button>
+                <button class="option" onclick="selectOpt('paper')">Paper</button>
+                <button class="option" onclick="selectOpt('scissors')">Scissors</button>
+            </div>
+            <div class="result" style="display: none;">
+                <p>You: <span id="userRes"></span></p>
+                <p>Your opponent: <span id="oppontRes"></span></p>
+                <p>Result: <span id="Res"></span></p>
+            </div>
+            <div class="buttons">
+                <button class="play" onclick="play()" style="display: none;">PLAY</button>
+                <button class="startOver" onclick="startOver()" style="display: none;">START OVER</button>
+            </div>
+        </div>
     </body>
 </html>
