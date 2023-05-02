@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Rock</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
         <link rel="stylesheet" href="styles.css" />
@@ -12,28 +13,40 @@
 
         <div class="container">
             <label>
-                <input type="radio" name="mode" value="rps" checked>Play Rock, Paper, Scissors?
+                <input type="radio" name="mode" id="play-rps" checked>Play Rock, Paper, Scissors?
             </label>
             <label>
-                <input type="radio" name="mode" value="rpsls" checked>Play Rock, Paper, Scissors, Lizard, Spock?
+                <input type="radio" name="mode" id="play-rpsls" checked>Play Rock, Paper, Scissors, Lizard, Spock?
             </label>
             <label>
-                <input type="checkbox" name="opponent" value="yes" checked>Play against an opponent?
+                <input type="checkbox" id="play-opponent">Play against an opponent?
             </label>
-            <div class="usr-inputs" style="display: none;">
-                <button class="usr-option" value="rock">Rock</button>
-                <button class="usr-option" value="paper">Paper</button>
-                <button class="usr-option" value="scissors">Scissors</button>
-                <button class="usr-option" value="lizard" style="display: none;">Lizard</button>
-                <button class="usr-option" value="spock" style="display: none;">Spock</button>
+            <div class="usr-inputs hidden">
+                <label>
+                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="rock">Rock
+                </label>
+                <label>
+                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="paper">Paper
+                </label>
+                <label>
+                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="scissors">Scissors
+                </label>
+                <label>
+                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="lizard">Lizard
+                </label>
+                <label>
+                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="spock">Spock
+                </label>
             </div>
         </div>
-        <div class="result" style="display: none;">
+        <div class="result hidden">
             <p class = "usr-result"></p>
             <p class = "oppont-result"></p>
             <p class = "game-result">></p>
          </div>
-        <button class="play-button">PLAY</button>
-        <button class="startOver-button" style="display: none;">START OVER</button>
+         <div class="controls">
+            <button class="play-button">PLAY</button>
+            <button class="startOver-button">START OVER</button>
+        </div>
     </body>
 </html>
