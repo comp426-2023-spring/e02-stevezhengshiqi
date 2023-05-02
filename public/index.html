@@ -1,6 +1,5 @@
 <html>
     <head>
-        <meta charset="UTF-8">
         <title>Rock</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
         <link rel="stylesheet" href="styles.css" />
@@ -10,43 +9,25 @@
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-
         <div class="container">
-            <label>
-                <input type="radio" name="mode" id="play-rps" checked>Play Rock, Paper, Scissors?
-            </label>
-            <label>
-                <input type="radio" name="mode" id="play-rpsls" checked>Play Rock, Paper, Scissors, Lizard, Spock?
-            </label>
-            <label>
-                <input type="checkbox" id="play-opponent">Play against an opponent?
-            </label>
-            <div class="usr-inputs hidden">
-                <label>
-                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="rock">Rock
-                </label>
-                <label>
-                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="paper">Paper
-                </label>
-                <label>
-                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="scissors">Scissors
-                </label>
-                <label>
-                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="lizard">Lizard
-                </label>
-                <label>
-                    <input type ="radio" name="usr-option" class="usr-option-button" data-choice="spock">Spock
-                </label>
+            <div class="mode-choice">
+                <input type="radio" name="mode" id="play-rps" class="mode-option" checked/>
+                <label for="play-rps">Play Rock, Paper, Scissors?</label>
+                <br />
+                <input type="radio" name="mode" id="play-rpsls" class="mode-option"/>
+                <label for="play-rpsls">Play Rock, Paper, Scissors, Lizard, Spock?</label>
+                <br />
+                <br />
+                <br />
+                <input type="radio" id="play-opponent" class="mode-option" />
+                <label for="play-opponent">Play against an opponent?</label>
             </div>
-        </div>
-        <div class="result hidden">
-            <p class = "usr-result"></p>
-            <p class = "oppont-result"></p>
-            <p class = "game-result">></p>
-         </div>
-         <div class="controls">
-            <button class="play-button">PLAY</button>
-            <button class="startOver-button">START OVER</button>
+            <div class="user-inputs"></div>
+            <div class="buttons">
+                <button class="play-button">PLAY</button>
+                <button class="startOver-button">START OVER</button>
+            </div>
+            <div class="results"></div>
         </div>
     </body>
 </html>
