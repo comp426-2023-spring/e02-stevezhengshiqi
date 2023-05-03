@@ -11,23 +11,23 @@
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
         <div class="container">
             <div class="mode-choice">
-                <input type="radio" name="mode" id="play-rps" class="mode-option" checked/>
+                <input type="radio" name="mode" id="rps" class="mode-option" checked/>
                 <label for="play-rps">Play Rock, Paper, Scissors?</label>
                 <br />
-                <input type="radio" name="mode" id="play-rpsls" class="mode-option"/>
+                <input type="radio" name="mode" id="rpsls" class="mode-option"/>
                 <label for="play-rpsls">Play Rock, Paper, Scissors, Lizard, Spock?</label>
                 <br />
                 <br />
                 <br />
-                <input type="radio" id="play-opponent" class="mode-option" />
-                <label for="play-opponent">Play against an opponent?</label>
+                <input type="checkbox" id="opponent" class="mode-option" />
+                <label for="play-opponent" >Play against an opponent?</label>
             </div>
-            <div class="user-inputs"></div>
+            <div class="user-inputs"></div> <!-- refer to scripts.js for dynamically loading -->
             <div class="buttons">
                 <button class="play-button">PLAY</button>
                 <button class="startOver-button">START OVER</button>
             </div>
-            <div class="results"></div>
+            <div class="results"></div> <!-- refer to scripts.js for dynamically loading -->
         </div>
     </body>
 </html>

@@ -2,28 +2,101 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
-import { rps, rpsls } from './rpsls.js';
+import { rps, rpsls } from "./rpsls.js";
 
-let usrMode = null;
-let usrInput = null;
+function getUserChoice() {
+    const userChoiceButton = document.querySelector(".user-inputs");
+    return userChoiceButton ? userChoiceButton.getAttribute("choice-content") : null;
+}
 
-document.querySelector(".play-button").addEventListener("click", () => {
-    const rpsChecked = document.querySelector("#rps").checked;
-    const rpslsChecked = document.querySelector("#rpsls").checked;
-    const opponentChecked = document.querySelector("#opponent").checked;
+function getSelectedGameMode() {
+    const gameModeButton = document.querySelector(".mode-option:checked");
+    return gameModeButton ? gameModeButton.getAttribute("id") : null;
+}
 
-    if (rpsCHecked) {
-        usrMode = "rps";
-    } else if (rpslsChecked) {
-        usrMode = "rpsls";
-    }
+function displayResult(gameResult) {
+    const resultContainer = document.querySelector(".results");
+    resultContainer.innerHTML = `
+        <div class="result-content">
+            <span class="result-target">You:</span>
+            <span class="result-text">${gameResult.player}</span>
+        </div>
+        <div class="result-content">
+            <span class="result-target">Your opponent:</span>
+            <span class="result-text">${gameResult.opponent}</span>
+        </div>
+        <div class="result-content">
+            <span class="result-label">Result:</span>
+            <span class="result-text">${gameResult.result.toUpperCase()}</span>
+        </div>
+    `;
+}
 
-    if (opponentChecked) {
-        document.querySelector(".usr-inputs").style.display = "block";
-    } else {
-        usrInput = null;
-        play();
-    }
+// Dynamically display result
+document.addEventListener("DOMContentLoaded", () => {
+    const playButton = document.querySelector(".play-button");
+    const startOverButton = document.querySelector(".startOver-button");
+
+    playButton.addEventListener("click", () => {
+        const gameMode = getSelectedGameMode();
+        const playAgainstOpponent = document.getElementById("opponent").checked;
+        let gameResult;
+    
+        if (playAgainstOpponent) {
+            const userChoice = getUserChoice();
+    
+            if (gameMode === "rps") {
+                gameResult = rps(userChoice);
+            } else if (gameMode === "rpsls") {
+                gameResult = rpsls(userChoice);
+            }
+        } else {
+            if (gameMode === "rps") {
+                gameResult = rps();
+            } else if (gameMode === "rpsls") {
+                gameResult = rpsls();
+            }
+        }
+    
+        displayResult(gameResult);
+    });
+    startOverButton.addEventListener("click", () => {
+        const resultContainer = document.querySelector(".results");
+        resultContainer.innerHTML = "";
+    });
+
+    document.querySelectorAll(".mode-option").forEach((gameModeButton) => {
+        gameModeButton.addEventListener("change", () => {
+            const userChoiceButtonsContainer = document.querySelector(".user-inputs");
+            userChoiceButtonsContainer.innerHTML = "";
+
+            const gameMode = getSelectedGameMode();
+            if (gameMode === "rps") {
+                userChoiceButtonsContainer.innerHTML = `
+                    <br />
+                    <input type="radio" class="user-inputs-button" name="user-choice" value="rock" choice-content="rock"> Rock
+                    <br />
+                    <input type="radio" class="user-inputs-button" name="user-choice" value="paper" choice-content="paper"> Paper
+                    <br />
+                    <input type="radio" class="user-inputs-button" name="user-choice" value="scissors" choice-content="scissors"> Scissors
+                    <br />
+                `;
+            } else if (gameMode === "rpsls") {
+                userChoiceButtonsContainer.innerHTML = `
+                    <br />
+                    <input type="radio" class="user-inputs-button" name="user-choice" value="rock" choice-content="rock"> Rock
+                    <br />
+                    <input type="radio" class="user-inputs-button" name="user-choice" value="paper" choice-content="paper"> Paper
+                    <br />
+                    <input type="radio" class="user-inputs-button" name="user-choice" value="scissors" choice-content="scissors"> Scissors
+                    <br />
+                    <input type="radio" class="user-inputs-button" name="user-choice" value="lizard" choice-content="lizard"> Lizard
+                    <br />
+                    <input type="radio" class="user-inputs-button" name="user-choice" value="spock" choice-content="spock"> Spock
+                    <br />
+                `;
+            }
+        });
+    });
 });
 
-document.querySelectorAll
