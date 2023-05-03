@@ -37,7 +37,7 @@ It also creates logs in a common log format (CLF) so that you can better.
     `)
     process.exit(0)
 } 
-import { rps, rpsls } from './lib/rpsls.js';
+import { rps, rpsls } from './public/rpsls.js';
 // Load express and other dependencies for serving HTML, CSS, and JS files
 import express from 'express'
 // Use CJS __filename and __dirname in ES module scope
