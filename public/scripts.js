@@ -5,7 +5,7 @@
 import { rps, rpsls } from "./rpsls.js";
 
 function getUserChoice() {
-    const userChoiceButton = document.querySelector(".user-inputs");
+    const userChoiceButton = document.querySelector(".user-inputs-button:checked");
     return userChoiceButton ? userChoiceButton.getAttribute("choice-content") : null;
 }
 
