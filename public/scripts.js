@@ -63,6 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
     startOverButton.addEventListener("click", () => {
         const resultContainer = document.querySelector(".results");
         resultContainer.innerHTML = "";
+
+        const userChoiceButtons = document.querySelectorAll(".user-inputs-button");
+        userChoiceButtons.forEach((button) => {
+            button.checked = false;
+        });
+    
+        const userChoiceButtonsContainer = document.querySelector(".user-inputs");
+        userChoiceButtonsContainer.innerHTML = "";
+
+        const opponentCheckbox = document.getElementById("opponent");
+        opponentCheckbox.checked = false;
     });
 
     document.querySelectorAll(".mode-option").forEach((gameModeButton) => {
