@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     
         displayResult(gameResult, playAgainstOpponent);
+        playButton.setAttribute("hidden", true);
     });
     startOverButton.addEventListener("click", () => {
         const resultContainer = document.querySelector(".results");
@@ -85,6 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const opponentCheckbox = document.getElementById("opponent");
         opponentCheckbox.checked = false;
+        
+        playButton.removeAttribute("hidden");
     });
 
     document.querySelectorAll(".mode-option").forEach((gameModeButton) => {
