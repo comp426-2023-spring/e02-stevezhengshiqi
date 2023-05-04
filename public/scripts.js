@@ -14,22 +14,30 @@ function getSelectedGameMode() {
     return gameModeButton ? gameModeButton.getAttribute("id") : null;
 }
 
-function displayResult(gameResult) {
+function displayResult(gameResult, playAgainstOpponent) {
     const resultContainer = document.querySelector(".results");
-    resultContainer.innerHTML = `
-        <div class="result-content">
-            <span class="result-target">You:</span>
-            <span class="result-text">${gameResult.player}</span>
-        </div>
-        <div class="result-content">
-            <span class="result-target">Your opponent:</span>
-            <span class="result-text">${gameResult.opponent}</span>
-        </div>
-        <div class="result-content">
-            <span class="result-label">Result:</span>
-            <span class="result-text">${gameResult.result.toUpperCase()}</span>
-        </div>
-    `;
+    if (playAgainstOpponent) {
+        resultContainer.innerHTML = `
+            <div class="result-content">
+                <span class="result-target">You:</span>
+                <span class="result-text">${gameResult.player}</span>
+            </div>
+            <div class="result-content">
+                <span class="result-target">Your opponent:</span>
+                <span class="result-text">${gameResult.opponent}</span>
+            </div>
+            <div class="result-content">
+                <span class="result-label">Result:</span>
+                <span class="result-text">${gameResult.result.toUpperCase()}</span>
+            </div>
+        `;
+    } else {
+        resultContainer.innerHTML = `
+            <div class="result-content">
+                <span class="result-text">${gameResult.player}</span>
+            </div>
+        `;
+    }
 }
 
 // Dynamically display result
@@ -58,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     
-        displayResult(gameResult);
+        displayResult(gameResult, playAgainstOpponent);
     });
     startOverButton.addEventListener("click", () => {
         const resultContainer = document.querySelector(".results");
