@@ -90,22 +90,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".mode-option").forEach((gameModeButton) => {
         gameModeButton.addEventListener("change", () => {
             const userChoiceButtonsContainer = document.querySelector(".user-inputs");
-            userChoiceButtonsContainer.innerHTML = "";
-
+            const playAgainstOpponent = document.getElementById("opponent").checked;
+    
+            if (!playAgainstOpponent) {
+                userChoiceButtonsContainer.innerHTML = "";
+                return;
+            }
+    
             const gameMode = getSelectedGameMode();
             if (gameMode === "rps") {
                 userChoiceButtonsContainer.innerHTML = `
-                    <br />
                     <input type="radio" class="user-inputs-button" name="user-choice" value="rock" choice-content="rock"> Rock
                     <br />
                     <input type="radio" class="user-inputs-button" name="user-choice" value="paper" choice-content="paper"> Paper
                     <br />
                     <input type="radio" class="user-inputs-button" name="user-choice" value="scissors" choice-content="scissors"> Scissors
-                    <br />
                 `;
             } else if (gameMode === "rpsls") {
                 userChoiceButtonsContainer.innerHTML = `
-                    <br />
                     <input type="radio" class="user-inputs-button" name="user-choice" value="rock" choice-content="rock"> Rock
                     <br />
                     <input type="radio" class="user-inputs-button" name="user-choice" value="paper" choice-content="paper"> Paper
@@ -115,10 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <input type="radio" class="user-inputs-button" name="user-choice" value="lizard" choice-content="lizard"> Lizard
                     <br />
                     <input type="radio" class="user-inputs-button" name="user-choice" value="spock" choice-content="spock"> Spock
-                    <br />
                 `;
             }
         });
-    });
+    });    
 });
 
