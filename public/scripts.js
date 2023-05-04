@@ -22,19 +22,22 @@ function displayResult(gameResult, playAgainstOpponent) {
                 <span class="result-target">You:</span>
                 <span class="result-text">${gameResult.player}</span>
             </div>
+            <br />
             <div class="result-content">
                 <span class="result-target">Your opponent:</span>
                 <span class="result-text">${gameResult.opponent}</span>
             </div>
+            <br />
             <div class="result-content">
                 <span class="result-label">Result:</span>
-                <span class="result-text">${gameResult.result.toUpperCase()}</span>
+                <span class="result-text">you ${gameResult.result.toUpperCase()}</span>
             </div>
+            <br />
         `;
     } else {
         resultContainer.innerHTML = `
             <div class="result-content">
-                <span class="result-text">${gameResult.player}</span>
+                <span class="result-text">${gameResult.player.toUpperCase()}</span>
             </div>
         `;
     }

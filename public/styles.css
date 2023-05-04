@@ -20,7 +20,18 @@ body {
 }
 
 .results {
-    text-align: left;
+    padding: 20px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: left;;
+}
+
+.user-inputs {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: left;;
 }
 
 .mode-choice {
@@ -82,3 +93,4 @@ input[type="checkbox"].mode-option {
     align-items: flex-start;
 }
 */
+
