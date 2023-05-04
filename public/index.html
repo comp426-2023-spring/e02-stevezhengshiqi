@@ -1,9 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>Rock</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
-        <link rel="stylesheet" href="styles.css" />
-        <script type="module" src="scripts.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
+        <script type="module" src="scripts.js"></script>
     </head>
     <body>
 
@@ -12,22 +14,22 @@
         <div class="container-wrapper">
             <div class="container">
                 <div class="mode-choice">
-                    <input type="radio" name="mode" id="rps" class="mode-option" checked/>
-                    <label for="play-rps">Play Rock, Paper, Scissors?</label>
-                    <br />
-                    <input type="radio" name="mode" id="rpsls" class="mode-option"/>
-                    <label for="play-rpsls">Play Rock, Paper, Scissors, Lizard, Spock?</label>
-                    <br />
-                    <br />
-                    <br />
-                    <input type="checkbox" id="opponent" class="mode-option" />
-                    <label for="play-opponent" >Play against an opponent?</label>
+                    <input type="radio" name="mode" id="rps" class="mode-option" checked>
+                    <label id="play-rps">Play Rock, Paper, Scissors?</label>
+                    <br >
+                    <input type="radio" name="mode" id="rpsls" class="mode-option">
+                    <label id="play-rpsls">Play Rock, Paper, Scissors, Lizard, Spock?</label>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="checkbox" id="opponent" class="mode-option">
+                    <label id="play-opponent" >Play against an opponent?</label>
                 </div>
-                <br />
+                <br>
                 <div class="user-inputs"></div> <!-- refer to scripts.js for dynamically loading -->
-                <br />
+                <br>
                 <div class="results"></div> <!-- refer to scripts.js for dynamically loading -->
-                <br />
+                <br>
                 <div class="buttons">
                     <button class="play-button">PLAY</button>
                     <button class="startOver-button">START OVER</button>
@@ -35,7 +37,7 @@
             </div>
         </div>
         <div>
-            For the rules and details of Rock Paper Scissors (rps) game, please refer to <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors">Rock paper scissors</a>.<br />And for the details of Rock, Paper, Scissors, Lizard, Spock (rpsls) game, please refer to <a href="https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock">Rock, Paper, Scissors, Lizard, Spock</a>.
+            For the rules and details of Rock Paper Scissors (rps) game, please refer to <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors">Rock paper scissors</a>.<br>And for the details of Rock, Paper, Scissors, Lizard, Spock (rpsls) game, please refer to <a href="https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock">Rock, Paper, Scissors, Lizard, Spock</a>.
         </div>
     </body>
 </html>
